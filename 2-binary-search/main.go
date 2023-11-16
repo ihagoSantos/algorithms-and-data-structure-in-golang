@@ -17,13 +17,11 @@ func binary_search(list []int, value int) int {
 	low := 0
 	high := len(list) - 1
 	index := -1
-	stop := 0
 
-	for stop == 0 {
+	for low <= high {
 		middle := int((low + high) / 2)
 		if value == list[middle] {
 			fmt.Printf("[%d] Binary Search: value == list[middle]\n", middle)
-			stop = 1
 			index = middle
 			break
 		} else if value < list[middle] {
